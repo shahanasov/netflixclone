@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ScrollItems extends StatelessWidget {
-  const ScrollItems({super.key});
+  final AsyncSnapshot snapshot;
+  const ScrollItems({super.key, required this.snapshot});
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +13,14 @@ class ScrollItems extends StatelessWidget {
                 width: 20,
               ),
           scrollDirection: Axis.horizontal,
-          itemCount: 10,
+          itemCount: snapshot.data.length,
           itemBuilder: (context, index) {
             return ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Container(
+              child: SizedBox(
                 height: 200,
                 width: 150,
-                color: Colors.cyan,
+              child: Image.network(filterQuality: FilterQuality.high,fit: BoxFit.cover,'https://image.tmdb.org/t/p/w500/${snapshot.data[index].posterPath}'),
               ),
             );
           }),
