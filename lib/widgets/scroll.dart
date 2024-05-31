@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/screen/details.dart';
 
 class ScrollItems extends StatelessWidget {
   final AsyncSnapshot snapshot;
@@ -17,10 +18,22 @@ class ScrollItems extends StatelessWidget {
           itemBuilder: (context, index) {
             return ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: SizedBox(
-                height: 200,
-                width: 150,
-              child: Image.network(filterQuality: FilterQuality.high,fit: BoxFit.cover,'https://image.tmdb.org/t/p/w500/${snapshot.data[index].posterPath}'),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              DetailsPage(movie: snapshot.data[index])));
+                },
+                child: SizedBox(
+                  height: 200,
+                  width: 150,
+                  child: Image.network(
+                      filterQuality: FilterQuality.high,
+                      fit: BoxFit.cover,
+                      'https://image.tmdb.org/t/p/w500/${snapshot.data[index].posterPath}'),
+                ),
               ),
             );
           }),
