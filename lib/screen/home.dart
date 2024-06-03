@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:netflix/models/movie.dart';
 import 'package:netflix/screen/details.dart';
 import 'package:netflix/services/api.dart';
+import 'package:netflix/services/apikey.dart';
 import 'package:netflix/widgets/scroll.dart';
 
 class HomePage extends StatefulWidget {
@@ -106,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                                           colorBlendMode: BlendMode.darken,
                                           filterQuality: FilterQuality.high,
                                           fit: BoxFit.cover,
-                                          'https://image.tmdb.org/t/p/w500/${snapshot.data![index].posterPath}'),
+                                          '${Keys.imagePath}${snapshot.data![index].posterPath}'),
                                     ),
                                   ),
 

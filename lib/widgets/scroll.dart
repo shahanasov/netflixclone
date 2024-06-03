@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/screen/details.dart';
+import 'package:netflix/services/apikey.dart';
 
 class ScrollItems extends StatelessWidget {
   final AsyncSnapshot snapshot;
@@ -36,7 +37,7 @@ class ScrollItems extends StatelessWidget {
                         child: Image.network(
                             filterQuality: FilterQuality.high,
                             fit: BoxFit.cover,
-                            'https://image.tmdb.org/t/p/w500/${snapshot.data[index].posterPath}'),
+                            '${Keys.imagePath}${snapshot.data[index].posterPath}'),
                       ),
                     ),
                   ),

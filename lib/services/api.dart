@@ -2,9 +2,11 @@ import 'dart:convert';
 
 import 'package:netflix/models/movie.dart';
 import 'package:http/http.dart' as http;
+import 'package:netflix/services/apikey.dart';
 
 class Api{
-  static const _trendingMovies='https://api.themoviedb.org/3/movie/popular?api_key=bbc436cbd5ee0318f92b779a8b540f39';
+  
+  static const _trendingMovies='https://api.themoviedb.org/3/movie/popular?api_key=${Keys.apikey}';
 
  Future<List<Movie>> gettrendingMovies()async{
   final response = await http.get(Uri.parse(_trendingMovies));
@@ -18,7 +20,7 @@ class Api{
   }
  }
 
- static const _topRated='https://api.themoviedb.org/3/movie/top_rated?api_key=bbc436cbd5ee0318f92b779a8b540f39';
+ static const _topRated='https://api.themoviedb.org/3/movie/top_rated?api_key=${Keys.apikey}';
  Future<List<Movie>> gettopMovies()async{
   final response = await http.get(Uri.parse(_topRated));
   if(response.statusCode==200){
@@ -29,7 +31,7 @@ class Api{
   }
  }
 
- static const _upcoming='https://api.themoviedb.org/3/movie/upcoming?api_key=bbc436cbd5ee0318f92b779a8b540f39';
+ static const _upcoming='https://api.themoviedb.org/3/movie/upcoming?api_key=${Keys.apikey}';
  Future<List<Movie>> getupcoming()async{
   final response= await http.get(Uri.parse(_upcoming));
   if(response.statusCode==200){
@@ -53,7 +55,7 @@ class Api{
 
 
 Future<List<Movie>> searchMovies(String query) async {
-    final searchUrl = 'https://api.themoviedb.org/3/search/movie?api_key=bbc436cbd5ee0318f92b779a8b540f39&query=$query';
+    final searchUrl = 'https://api.themoviedb.org/3/search/movie?api_key=${Keys.apikey}&query=$query';
     final response = await http.get(Uri.parse(searchUrl));
     if (response.statusCode == 200) {
       final decoded = json.decode(response.body)['results'] as List;
