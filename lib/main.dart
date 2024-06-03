@@ -12,6 +12,26 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Netflix',
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.white
+        // elevatedButtonTheme: ElevatedButtonThemeData(
+        //     style: ButtonStyle(
+        //         backgroundColor: Color.fromRGBO(0, 0, 0, 0))),
+        // unselectedWidgetColor: Colors.white,
+        // primaryColorLight: Colors.white,
+        // primaryColorDark: Colors.white,
+        // cardColor: Colors.white,
+        // hintColor: Colors.white,
+        // indicatorColor: Colors.white,
+        // hoverColor: Colors.white,
+        // highlightColor: Colors.white,
+        // focusColor: Colors.white,
+        // brightness: Brightness.light,
+        // primaryColor: Colors.white,
+        // colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.grey)
+        //     .copyWith(secondary: Colors.white),
+      ),
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,

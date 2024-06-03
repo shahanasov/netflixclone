@@ -31,14 +31,14 @@ class _SearchPageState extends State<SearchPage> {
                 children: [
                   Row(
                     children: [
-                      TextButton(onPressed: () {}, child: const Text('Hot')),
+                      ElevatedButton(onPressed: (){}, child: const Text('Hot')),
                       TextButton(onPressed: () {}, child: const Text('Rating')),
                       TextButton(onPressed: () {}, child: const Text('Latest'))
                     ],
                   ),
                   Row(
                     children: [
-                      TextButton(onPressed: () {}, child: const Text('Drama')),
+                      ElevatedButton(onPressed: (){}, child: const Text('Drama')),
                       TextButton(
                           onPressed: () {}, child: const Text('Variety Show')),
                       TextButton(onPressed: () {}, child: const Text('Movie')),
@@ -47,7 +47,7 @@ class _SearchPageState extends State<SearchPage> {
                   ),
                   Row(
                     children: [
-                      TextButton(onPressed: () {}, child: const Text('All')),
+                      ElevatedButton(onPressed: (){}, child: const Text('All')),
                       TextButton(
                           onPressed: () {}, child: const Text('Western')),
                       TextButton(onPressed: () {}, child: const Text('India')),
@@ -57,7 +57,7 @@ class _SearchPageState extends State<SearchPage> {
                   ),
                   Row(
                     children: [
-                      TextButton(onPressed: () {}, child: const Text('All')),
+                      ElevatedButton(onPressed: (){}, child: const Text('All')),
                       TextButton(
                           onPressed: () {}, child: const Text('Romance')),
                       TextButton(

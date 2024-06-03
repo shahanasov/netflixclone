@@ -38,8 +38,7 @@ class _BottomBarState extends State<BottomBar> {
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.download_done_outlined), label: 'Download'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.menu), label: 'Menu'),
+            BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
           ]),
       body: pages.elementAt(selectedIndex),
     );
