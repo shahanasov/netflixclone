@@ -42,17 +42,6 @@ class Api{
   }
  }
 
-//   static const _searach='https://api.themoviedb.org/3/movie/upcoming?api_key=bbc436cbd5ee0318f92b779a8b540f39';
-//  Future<List<Movie>> search()async{
-//   final response= await http.get(Uri.parse(_upcoming));
-//   if(response.statusCode==200){
-//     final decoded= json.decode(response.body)['results'] as List;
-//     return decoded.map((film) => Movie.fromJson(film)).toList();
-//   }else{
-//     throw Exception('error');
-//   }
-//  }
-
 
 Future<List<Movie>> searchMovies(String query) async {
     final searchUrl = 'https://api.themoviedb.org/3/search/movie?api_key=${Keys.apikey}&query=$query';
